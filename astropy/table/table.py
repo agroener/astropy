@@ -665,6 +665,7 @@ class Table(object):
             for the unit.
         show_dtype : bool
             Include a header row for column dtypes (default=True)
+
         align : str
             Left/right alignment of a column. Default is 'right'.
         """
@@ -674,8 +675,8 @@ class Table(object):
         if outs['show_length']:
             lines.append('Length = {0} rows'.format(len(self)))
 
-        lines, n_header = self.formatter._pformat_table(self, max_lines, max_width, show_name,
-                                                        show_unit,align=align)
+        n_header = outs['n_header']
+
         for i, line in enumerate(lines):
             if i < n_header:
                 color_print(line, 'red')
@@ -793,6 +794,7 @@ class Table(object):
             Formatted table as a list of strings
 
         """
+
         lines, outs = self.formatter._pformat_table(self, max_lines, max_width,
                                                     show_name=show_name, show_unit=show_unit,
                                                     show_dtype=show_dtype, html=html,

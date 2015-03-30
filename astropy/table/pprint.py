@@ -186,7 +186,6 @@ class TableFormatter(object):
 
     def _pformat_col(self, col, max_lines=None, show_name=True, show_unit=None,
                      show_dtype=False, show_length=None, html=False, align=None):
-
         """Return a list of formatted string representation of column values.
 
         Parameters
@@ -424,7 +423,6 @@ class TableFormatter(object):
     def _pformat_table(self, table, max_lines=None, max_width=None, show_name=True,
                        show_unit=None, show_dtype=False,
                        html=False, tableid=None, align='right'):
-
         """Return a list of lines for the formatted string representation of
         the table.
 
